@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap placeholder (useful for Google services audit)
+Sitemap: https://healthfo.a.run.app/sitemap.xml

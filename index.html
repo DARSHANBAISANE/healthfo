@@ -3,7 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Healthfo - The AI-driven health and nutrition ecosystem for personalized meal discovery and dietary planning."/>
     <title>Healthfo | Central Orchestrator</title>
+    
+    <!-- Efficiency Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -72,9 +78,9 @@
                 </div>
 
                 <!-- Small Pulse Card -->
-                <div class="card flex flex-col justify-between">
+                <div class="card flex flex-col justify-between" role="region" aria-label="Real-time Context Pulse">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-secondary">electric_bolt</span>
+                        <span class="material-symbols-outlined text-secondary" aria-hidden="true">electric_bolt</span>
                         <h3 class="font-bold uppercase tracking-widest text-xs text-on-surface-variant">Real-Time Pulse</h3>
                     </div>
                     <p class="text-3xl font-headline font-black">12°C <span class="text-sm font-medium text-on-surface-variant">/ Cold</span></p>
@@ -82,9 +88,9 @@
                 </div>
 
                 <!-- Habit Loop Card -->
-                <div class="card flex flex-col justify-between">
+                <div class="card flex flex-col justify-between" role="region" aria-label="Feedback Loop Status">
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="material-symbols-outlined text-primary">update</span>
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">update</span>
                         <h3 class="font-bold uppercase tracking-widest text-xs text-on-surface-variant">Last Feedback</h3>
                     </div>
                     <p class="text-3xl font-headline font-black">Optimal</p>
@@ -141,6 +147,25 @@
             } else {
                 document.getElementById('user-name-display').textContent = 'Pro Profile Active';
             }
+        });
+    </script>
+    <!-- Google Services Infrastructure -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Logic Test & Audit Tools -->
+    <script src="vitalis_core/intelligence.js"></script>
+    <script src="vitalis_core/constraints.js"></script>
+    <script src="tests/logic_tests.js"></script>
+    <script>
+        // Automatic health check on load
+        window.addEventListener('load', () => {
+            if (window.VitalisTests) window.VitalisTests.runAll();
         });
     </script>
 </body>

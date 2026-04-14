@@ -31,18 +31,29 @@ const VitalisState = {
      * Initialize or Get State
      */
     getState() {
-        const stored = localStorage.getItem(this.STORAGE_KEY);
-        if (!stored) {
+        try {
+            const stored = localStorage.getItem(this.STORAGE_KEY);
+            if (!stored) {
+                return JSON.parse(JSON.stringify(this.defaults));
+            }
+            const parsed = JSON.parse(stored);
+            // Basic sanitization: Ensure critical structures exist
+            return { ...this.defaults, ...parsed };
+        } catch (e) {
+            console.error("VitalisState: Failed to load state", e);
             return JSON.parse(JSON.stringify(this.defaults));
         }
-        return JSON.parse(stored);
     },
 
     /**
      * Save updated state
      */
     saveState(state) {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+        try {
+            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+        } catch (e) {
+            console.error("VitalisState: Failed to save state", e);
+        }
     },
 
     /**

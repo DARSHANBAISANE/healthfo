@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 
 <html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Set up your Healthfo Identity & Taste DNA for surgical personalization."/>
 <title>Healthfo Onboarding | Taste DNA</title>
+<!-- Efficiency Optimization -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -231,20 +233,20 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 <div class="md:col-span-8 grid grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant ml-2">Age</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="28" type="number"/>
+<label for="age-input" class="text-sm font-bold text-on-surface-variant ml-2">Age</label>
+<input id="age-input" class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="28" type="number" aria-required="true"/>
 </div>
 <div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant ml-2">Weight (kg)</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="72" type="number"/>
+<label for="weight-input" class="text-sm font-bold text-on-surface-variant ml-2">Weight (kg)</label>
+<input id="weight-input" class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="72" type="number" aria-required="true"/>
 </div>
 <div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant ml-2">Height (cm)</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="178" type="number"/>
+<label for="height-input" class="text-sm font-bold text-on-surface-variant ml-2">Height (cm)</label>
+<input id="height-input" class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="178" type="number" aria-required="true"/>
 </div>
 <div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant ml-2">Activity Level</label>
-<select class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg appearance-none">
+<label for="activity-level" class="text-sm font-bold text-on-surface-variant ml-2">Activity Level</label>
+<select id="activity-level" class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg appearance-none" aria-label="Select your daily activity level">
 <option>Moderate</option>
 <option>Sedentary</option>
 <option>Active</option>

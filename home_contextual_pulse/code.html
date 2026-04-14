@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthfo - Contextual Pulse</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../vitalis_core/theme.css" rel="stylesheet"/>
+<script src="../vitalis_core/state.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#616263",
+                    "secondary-fixed-dim": "#ffb470",
+                    "tertiary-fixed-dim": "#f1f1f1",
+                    "primary-fixed": "#9df197",
+                    "surface": "#f5f7f5",
+                    "tertiary-container": "#ffffff",
+                    "on-secondary-fixed-variant": "#7a4300",
+                    "outline": "#747776",
+                    "inverse-primary": "#9df197",
+                    "secondary": "#8a4c00",
+                    "inverse-on-surface": "#9b9d9c",
+                    "on-tertiary-fixed-variant": "#6c6d6e",
+                    "inverse-surface": "#0b0f0e",
+                    "primary-dim": "#025d16",
+                    "on-secondary-container": "#6d3b00",
+                    "on-error-container": "#520c00",
+                    "on-surface-variant": "#595c5b",
+                    "on-primary-container": "#005c15",
+                    "on-tertiary-fixed": "#4f5051",
+                    "error": "#b02500",
+                    "surface-bright": "#f5f7f5",
+                    "surface-container-high": "#e0e3e1",
+                    "tertiary-fixed": "#ffffff",
+                    "surface-container": "#e6e9e7",
+                    "on-primary-fixed-variant": "#12661e",
+                    "on-secondary-fixed": "#512a00",
+                    "secondary-fixed": "#ffc697",
+                    "error-dim": "#b92902",
+                    "primary": "#176a21",
+                    "primary-fixed-dim": "#90e28a",
+                    "on-primary-fixed": "#00460e",
+                    "on-secondary": "#fff0e6",
+                    "surface-dim": "#d1d5d3",
+                    "secondary-container": "#ffc697",
+                    "tertiary": "#5a5c5c",
+                    "on-error": "#ffefec",
+                    "on-tertiary": "#f3f3f3",
+                    "surface-variant": "#d9dedb",
+                    "secondary-dim": "#794200",
+                    "on-background": "#2c2f2e",
+                    "on-primary": "#d1ffc8",
+                    "error-container": "#f95630",
+                    "tertiary-dim": "#4e5050",
+                    "background": "#f5f7f5",
+                    "surface-tint": "#176a21",
+                    "primary-container": "#9df197",
+                    "outline-variant": "#abaeac",
+                    "surface-container-low": "#eff1ef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#2c2f2e",
+                    "surface-container-highest": "#d9dedb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vitality-ring {
+            background: conic-gradient(from 0deg, #176a21 var(--progress), #ffb470 var(--progress));
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-green-900 dark:text-green-100 font-headline">Healthfo</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-green-700 dark:text-green-400 font-bold border-b-2 border-green-700 transition-colors" href="#">Home</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../advanced_meal_planner/code.html">Planner</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../meal_discovery_logic_match/code.html">Discovery</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-high rounded-full px-4 py-2 gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm" placeholder="Search insights..." type="text"/>
+</div>
+<button class="text-green-800 dark:text-green-400 p-2"><span class="material-symbols-outlined">favorite</span></button>
+<button class="text-green-800 dark:text-green-400 p-2"><span class="material-symbols-outlined">notifications</span></button>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-primary-container shadow-sm" data-alt="close-up portrait of a healthy smiling person in athletic wear with soft morning sunlight highlighting their face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_NjfYPH44tHYJhO_tkgA0l64w5Swh8F9goLl9IFu7-ZhwsmJZQ89uOHD-Hh-TVuHgf6-oHC-G_qXgqY-0e-yWGq3A7_ptCAn7hcGuH6XwBcKIw50l1zlpXT_ncLKZrWKt8wqQMpjbSiad6bLTtfdiIqQpqlpQjRj9sHLWABpTMtZLNQfEkiDnLobzZQzv-xm6r5eWKNXa2xOtpahrl8XaQScUUTJOy_zYu1wKRYxChSRcDbNUvl_TdNcAlhE7TMjFOR0-3JnkQRA"/>
+</div>
+</header>
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 py-6 bg-zinc-50 dark:bg-zinc-950 pt-24 z-40">
+<div class="px-6 mb-8">
+<h3 class="font-headline text-xl font-black text-green-800">Vitality Status</h3>
+<p class="text-xs text-zinc-500 font-semibold mt-1">Steps: 8,432 | Stress: Low</p>
+</div>
+<div class="flex flex-col flex-grow">
+<a class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full mx-2 px-4 py-3 flex items-center gap-3 font-manrope text-sm font-semibold transition-all translate-x-1" href="#">
+<span class="material-symbols-outlined">home_health</span> Home
+            </a>
+<a class="text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 flex items-center gap-3 font-manrope text-sm font-semibold hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span> Planner
+            </a>
+<a class="text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 flex items-center gap-3 font-manrope text-sm font-semibold hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span> Library
+            </a>
+<a class="text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 flex items-center gap-3 font-manrope text-sm font-semibold hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">person</span> Profile
+            </a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary text-on-primary rounded-full py-3 font-bold text-sm mb-6 shadow-[0_12px_32px_-4px_rgba(23,106,33,0.2)] active:scale-95 duration-200">
+                Sync Wearable
+            </button>
+<div class="border-t border-zinc-200 dark:border-zinc-800 pt-4">
+<a class="text-zinc-500 flex items-center gap-3 px-4 py-2 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">settings</span> Settings</a>
+<a class="text-zinc-500 flex items-center gap-3 px-4 py-2 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">help</span> Support</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 pt-28 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Contextual Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface mb-2">Morning, Alex.</h1>
+<div class="inline-flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/15">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-sm">partly_cloudy_day</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Weather: 12°C</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">psychology</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Mood: Stressed</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-sm">distance</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Recent: 5km Run</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary-container p-4 rounded-lg flex items-center gap-4 shadow-sm">
+<div class="relative w-12 h-12">
+<svg class="w-12 h-12 rotate-[-90deg]" viewbox="0 0 36 36">
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#d1ffc8" stroke-width="3"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#176a21" stroke-dasharray="75, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">75%</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-black text-on-primary-container leading-none">Daily Goal</p>
+<p class="text-lg font-headline font-bold text-on-primary-container">In Flow</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+<!-- Bento Meal Recommendations Grid -->
+<div class="xl:col-span-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Recommended for You</h2>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group">
+                        See All <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Featured Meal Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-lg overflow-hidden group shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] flex flex-col md:flex-row">
+<div class="md:w-1/2 relative h-64 md:h-auto">
+<img alt="Salmon Bowl" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="aerial view of a fresh salmon bowl with avocado, quinoa, and dark leafy greens on a textured ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSc24LSi0YcXDcg8p3sC8LggBuXxUeGIELVN3R173b5QJFMPDzeuNWEflyPHq-dKiU96eOkh9XHzul_bD7DsRqXiOT0sqhSpHCGL72vqa0cwrSrlUBgl9IPQ_V01bdPLuCbRt4nQ5EfI0QA7p9gMJSk-tThZZmz0n-q8flDyWch4pl_fbj1U-nni8tsk47okeOpqsYaIXqw_FA3ehNcbZ-QnBJGl7ks32BmGBcts1DTbaTqyegGBAVqkbb9-jk7_4i3-t2Sis1qUY"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold text-primary">95% Match</span>
+</div>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex gap-2 mb-4">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase">High Protein</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase">Low Sodium</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3">Grilled Atlantic Salmon &amp; Spinach Quinoa</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+<span class="font-bold text-secondary">Reason:</span> Magnesium-rich ingredients specifically selected for stress relief and muscle recovery post-run.
+                                </p>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container rounded-full py-3 font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">restaurant</span> Get Recipe
+                            </button>
+</div>
+</div>
+<!-- Regular Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-6 flex flex-col shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative w-full aspect-video rounded-md overflow-hidden mb-6">
+<img alt="Avocado Toast" class="w-full h-full object-cover" data-alt="minimalist overhead shot of gourmet avocado toast with radish slices and chili flakes on artisan sourdough bread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA83Rcyyn-xABvf9Mf9UMMyXBgvOMNWjDdvJLJ1Xvpp_HGCKa2i6d6E3bCvmj7nWy-QEloBA_NwKVODcH1KYfbCm5Du7Xhplzf2wN_bnX_hmBo8z5sxHPecBxMpvu6amBksuvAKnXOWDrzm94zldQiIisekSaU-1oAet1pZmhhYqRvHy-kgv2M8mWCu5fYhlgGqt9aZD4egLAPs1xYHfTZIPnqX7GVdciSgKr8YJeinCTcy7Ud3ueBkOavpiB3TwWb9Ux5EJYrbNkM"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded-md text-[10px] font-bold text-primary">88% Match</div>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Zinc-Boost Avocado Toast</h4>
+<p class="text-xs text-on-surface-variant mb-4 flex-grow">Contains pumpkin seeds and whole grains to support immune function during high-stress periods.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<span class="text-primary font-bold text-xs uppercase">520 kcal</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">bookmark</span>
+</div>
+</div>
+<!-- Regular Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-6 flex flex-col shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] hover:translate-y-[-4px] transition-all duration-300">
+<div class="relative w-full aspect-video rounded-md overflow-hidden mb-6">
+<img alt="Berry Parfait" class="w-full h-full object-cover" data-alt="close-up of a greek yogurt parfait with layers of blueberries, granola, and honey in a clear glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUFtHQmEvbytSefszUnFh_kWRs2ug2Ks4S88KNJHY-diM7y74sLUbTDmfPxa2t6ZpZ7uub5u4OrQuIf26BEUlWzOPwxN120_pizv5NyCh_wyVne2mDPr-icZIv4ykNcbvq99cmkuECAmG6T2k7WVDm7Ugt3qu55PBoGjwOByvgvyr-W2eLoJ7oDhqvW3q9DPDm7KWt1kj4nJFoKXjZ_Mw4fzLNIQ-4NeNKXg_xH7HMnkcBRkMBEJFcP4EWxcl1sms7Et9A7qnlwrU"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2 py-1 rounded-md text-[10px] font-bold text-primary">91% Match</div>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Prebiotic Berry Parfait</h4>
+<p class="text-xs text-on-surface-variant mb-4 flex-grow">High fiber content and live cultures to optimize gut-brain axis for better mood management.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<span class="text-primary font-bold text-xs uppercase">340 kcal</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pulse Sidebar -->
+<div class="xl:col-span-4">
+<div class="bg-surface-container-low rounded-lg p-8 sticky top-28">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-primary fill-1">electric_bolt</span>
+<h2 class="text-xl font-headline font-extrabold uppercase tracking-tight">Real-Time Pulse</h2>
+</div>
+<div class="space-y-8">
+<!-- Step Count -->
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[10px] font-black uppercase text-on-surface-variant mb-1">Steps</p>
+<p class="text-3xl font-headline font-extrabold text-primary">8,432</p>
+</div>
+<div class="bg-primary-container/40 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">steps</span>
+</div>
+</div>
+<!-- Heart Rate -->
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[10px] font-black uppercase text-on-surface-variant mb-1">Heart Rate</p>
+<div class="flex items-end gap-2">
+<p class="text-3xl font-headline font-extrabold text-secondary">72</p>
+<p class="text-xs font-bold text-secondary-dim pb-1">BPM</p>
+</div>
+</div>
+<div class="bg-secondary-container/30 p-3 rounded-full">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<!-- Sleep -->
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[10px] font-black uppercase text-on-surface-variant mb-1">Sleep Score</p>
+<p class="text-3xl font-headline font-extrabold text-on-surface">84</p>
+</div>
+<div class="bg-surface-variant p-3 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+</div>
+<!-- Mini Chart Concept -->
+<div class="pt-4">
+<p class="text-[10px] font-black uppercase text-on-surface-variant mb-4">Energy Levels (Today)</p>
+<div class="flex items-end justify-between h-16 gap-1">
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 40%"></div>
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 65%"></div>
+<div class="w-full bg-primary rounded-t-sm shadow-[0_-4px_12px_rgba(23,106,33,0.3)]" style="height: 95%"></div>
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 75%"></div>
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 55%"></div>
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 45%"></div>
+<div class="w-full bg-primary-container rounded-t-sm" style="height: 30%"></div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-5 rounded-md border border-outline-variant/10">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg">info</span>
+<p class="text-xs leading-relaxed text-on-surface-variant">
+<span class="font-bold text-on-surface">Insight:</span> Your cortisol markers are peaking 15% higher than usual. Focus on deep breathing and low-sodium meals today.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t-0 py-3 px-6 flex justify-between items-center z-50 shadow-[0_-8px_24px_-4px_rgba(44,47,46,0.08)]">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_health</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Planner</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-8 lg:bottom-12 lg:right-12 w-16 h-16 bg-primary text-on-primary rounded-full shadow-[0_12px_32px_-4px_rgba(23,106,33,0.3)] flex items-center justify-center group active:scale-90 duration-200 z-50">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthfo | Meal Discovery &amp; Decision Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../vitalis_core/theme.css" rel="stylesheet"/>
+<script src="../vitalis_core/state.js"></script>
+<script src="../vitalis_core/intelligence.js"></script>
+<script src="../vitalis_core/constraints.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#616263",
+                    "secondary-fixed-dim": "#ffb470",
+                    "tertiary-fixed-dim": "#f1f1f1",
+                    "primary-fixed": "#9df197",
+                    "surface": "#f5f7f5",
+                    "tertiary-container": "#ffffff",
+                    "on-secondary-fixed-variant": "#7a4300",
+                    "outline": "#747776",
+                    "inverse-primary": "#9df197",
+                    "secondary": "#8a4c00",
+                    "inverse-on-surface": "#9b9d9c",
+                    "on-tertiary-fixed-variant": "#6c6d6e",
+                    "inverse-surface": "#0b0f0e",
+                    "primary-dim": "#025d16",
+                    "on-secondary-container": "#6d3b00",
+                    "on-error-container": "#520c00",
+                    "on-surface-variant": "#595c5b",
+                    "on-primary-container": "#005c15",
+                    "on-tertiary-fixed": "#4f5051",
+                    "error": "#b02500",
+                    "surface-bright": "#f5f7f5",
+                    "surface-container-high": "#e0e3e1",
+                    "tertiary-fixed": "#ffffff",
+                    "surface-container": "#e6e9e7",
+                    "on-primary-fixed-variant": "#12661e",
+                    "on-secondary-fixed": "#512a00",
+                    "secondary-fixed": "#ffc697",
+                    "error-dim": "#b92902",
+                    "primary": "#176a21",
+                    "primary-fixed-dim": "#90e28a",
+                    "on-primary-fixed": "#00460e",
+                    "on-secondary": "#fff0e6",
+                    "surface-dim": "#d1d5d3",
+                    "secondary-container": "#ffc697",
+                    "tertiary": "#5a5c5c",
+                    "on-error": "#ffefec",
+                    "on-tertiary": "#f3f3f3",
+                    "surface-variant": "#d9dedb",
+                    "secondary-dim": "#794200",
+                    "on-background": "#2c2f2e",
+                    "on-primary": "#d1ffc8",
+                    "error-container": "#f95630",
+                    "tertiary-dim": "#4e5050",
+                    "background": "#f5f7f5",
+                    "surface-tint": "#176a21",
+                    "primary-container": "#9df197",
+                    "outline-variant": "#abaeac",
+                    "surface-container-low": "#eff1ef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#2c2f2e",
+                    "surface-container-highest": "#d9dedb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .vitality-ring {
+            background: conic-gradient(from 0deg, #176a21 0%, #176a21 88%, #ffb470 88%, #ffb470 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] flex justify-between items-center px-8 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-green-900 dark:text-green-100">Healthfo</span>
+<div class="hidden md:flex gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../index.html">Dashboard</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../advanced_meal_planner/code.html">Planner</a>
+<a class="text-green-700 dark:text-green-400 font-bold border-b-2 border-green-700 transition-colors" href="#">Discovery</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile summary" data-alt="Professional headshot of a healthy young woman with glowing skin and a friendly smile, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPLd5p5TfKIqKAQLFHykyF0DmSa-o7SZn838CTeDKGmib-jVdf1FTSpKOfBGizaAQY6iHmeec9cFzdz2wQ8cgFwKIVNAVYu1c5Wtwqr8ILhE54ZQmQgCzO2bKnzGXpD096_T95c2KkZB6aSKmyZGe3QrraCYYM3KKRXxd0RKzO4_2Yc8-jEl-vT5h8f80p6-gtoCRDZGU1UBc3LTtYTuI21rdoAJQ456pAoYGNoF5_biTbSlpuO7Ds52I39Oj9McSzChDEKaQkxQ0"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar Component (Desktop) -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 py-6 bg-zinc-50 dark:bg-zinc-950 z-40 pt-24">
+<div class="px-6 mb-8">
+<h3 class="font-manrope text-sm font-semibold text-green-700 uppercase tracking-wider">Vitality Status</h3>
+<p class="text-xs text-zinc-500 mt-1">Steps: 8,432 | Stress: Low</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 rounded-full transition-all group" href="#">
+<span class="material-symbols-outlined">home_health</span>
+<span class="font-manrope text-sm font-semibold">Home</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-manrope text-sm font-semibold">Planner</span>
+</a>
+<a class="flex items-center gap-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full mx-2 px-4 py-3 translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-manrope text-sm font-semibold">Library</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-manrope text-sm font-semibold">Profile</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-2">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-sm">sync</span> Sync Wearable
+            </button>
+<div class="pt-4 border-t border-zinc-200">
+<a class="flex items-center gap-3 text-zinc-500 px-4 py-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-xs font-semibold uppercase">Settings</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 lg:pl-64 min-h-screen">
+<div class="max-w-7xl mx-auto px-8 py-8">
+<!-- Header Section -->
+<header class="mb-12">
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Meal Discovery</span>
+<h1 class="text-5xl font-black text-on-surface mt-2 tracking-tight">The Decision Tree</h1>
+<p class="text-on-surface-variant text-lg mt-4 max-w-2xl leading-relaxed">
+                    Our AI-driven insight engine evaluates every dish against your unique biological profile, goals, and current context.
+                </p>
+</header>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
+<!-- Left Column: Menu/Dish List (Bento-ish) -->
+<section class="xl:col-span-4 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="headline-md font-bold text-on-surface-variant">Recommended Dishes</h2>
+<span class="material-symbols-outlined text-outline">tune</span>
+</div>
+<!-- Dish Card 1: Selected -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] ring-2 ring-primary relative overflow-hidden group cursor-pointer transition-all">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-md overflow-hidden flex-shrink-0">
+<img alt="Summer Salmon Bowl" data-alt="Gourmet salmon poke bowl with edamame, avocado, and pickled radish on a white background with overhead lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-s4Jck3QYHB_0mOdW3OPEOaLNmsMwPhpEvD2WaDAd7jYr29pHbxjGnJbkGLY0k8btEzafe_5lyQAq8FmPvuaWdH6gZ9rl3Z6x95ZltJFI5pe_obmTEmUSvY-cJnaClFV0TLmXIc5Zq5K9LNp1sRA-xt4UEoBDkPpYCEe1ZOdlr4UCc-uFuG79eFwDy79Gv2eVVHND7-_woZIYhtcesCuJ01xW_chPKbcwtbJyjyT8ZWO-PGYywM0xCA_Hm3t27O8Wz5ZCZNjCrQ"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg text-on-surface">Summer Salmon Bowl</h3>
+<span class="bg-primary-container text-on-primary-container px-2 py-1 rounded text-xs font-black">88</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Wild salmon, quinoa, avocado, yuzu vinaigrette.</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-surface-variant rounded-full text-[10px] font-bold text-on-surface-variant uppercase">Keto Friendly</span>
+<span class="px-2 py-0.5 bg-surface-variant rounded-full text-[10px] font-bold text-on-surface-variant uppercase">High Protein</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dish Card 2 -->
+<div class="bg-surface-container-low p-6 rounded-lg hover:bg-surface-container-lowest transition-all group cursor-pointer">
+<div class="flex gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="w-24 h-24 rounded-md overflow-hidden flex-shrink-0">
+<img alt="Vitality Mediterranean" data-alt="Mediterranean salad with chickpeas, feta cheese, cucumber, and kalamata olives, bright studio photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYFfh1AnwrrfscUotHhINnBTEf6YZTjJRHUvghQE0xe0VPwvC8KFErAQ32ufMra7307iIrq8d9_YU-G7Bm-gr1Q60elMCJrbQYZxDRbjRsMOnaByneHtyEKQh4TJSvWLXwegXhQUUZbteux9ij9Ie53M1BwMxc7MQjrFTV69yMQBvkSUw5QP0N_dHAuECPwug-8Scoe1Hl7f5g2xkVAOyaA1mLIxiF15GuYQzW3L6OgfvcKP6cd5rbMZyQgr7fU-MA0WlqU4BMHss"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg text-on-surface">Vitality Mediterranean</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-xs font-black">72</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Chickpeas, kalamata, feta, extra virgin olive oil.</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-surface-variant rounded-full text-[10px] font-bold text-on-surface-variant uppercase">Vegan Option</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dish Card 3 -->
+<div class="bg-surface-container-low p-6 rounded-lg hover:bg-surface-container-lowest transition-all group cursor-pointer">
+<div class="flex gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="w-24 h-24 rounded-md overflow-hidden flex-shrink-0">
+<img alt="Pro-Recovery Chicken" data-alt="Grilled chicken breast with asparagus and lemon slices, elegant minimalist plating, soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDOgoSP9qkfLTT0dozchb_I9iTcJdX5ZHhue7H34MGD3tLxa88xQieNB1AFQUp0SvkhHCVdtW0MY_dSkTi-CXuHBqxt0CpNO26GEiTLFob7RG1fYuiTCZvC2WCoXEWssfZGeXqR4x9Z0ZDmkUk8DaQW_HqkXjDKAGvuVBLhlslN72Ifd-kSX3gSiKEI0i8D8010KLKmSpI8cSAgdRv-vy-FDj8fkuyU2t3Ijjm4Q__BhrY6ZF9bYcFw81y8R-lTBHNGDouTtQvtcE"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg text-on-surface">Pro-Recovery Chicken</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-xs font-black">64</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Lemon herb chicken, grilled asparagus, brown rice.</p>
+<div class="flex gap-2 mt-3">
+<span class="px-2 py-0.5 bg-surface-variant rounded-full text-[10px] font-bold text-on-surface-variant uppercase">Post-Workout</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right/Center Column: Decision Tree Insight -->
+<section class="xl:col-span-8 bg-surface-container-lowest rounded-lg p-10 shadow-[0_24px_48px_-12px_rgba(44,47,46,0.08)] relative overflow-hidden">
+<!-- Glassmorphism Overlay Texture -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12 relative z-10">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Selected Insight</span>
+<span class="text-on-surface-variant text-sm font-medium">Healthfo Score: 88/100</span>
+</div>
+<h2 class="text-4xl font-black text-on-surface tracking-tighter">Summer Salmon Bowl</h2>
+</div>
+<div class="flex items-center gap-6 bg-surface-container-low px-6 py-4 rounded-lg">
+<div class="relative w-16 h-16 rounded-full flex items-center justify-center vitality-ring">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+<span class="text-primary font-black text-sm">88%</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest">Match Strength</p>
+<p class="text-lg font-bold text-primary">Exceptional Choice</p>
+</div>
+</div>
+</div>
+<!-- The Decision Tree Logic -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 relative">
+<!-- Logic Line -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-outline-variant/20 -ml-[1px]"></div>
+<!-- Gate 1: Safety -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline font-bold text-on-surface">Safety Check</h4>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">No allergens detected. Cross-contamination risk at "Green House Kitchen" is rated low for gluten sensitivities.</p>
+</div>
+</div>
+<!-- Gate 2: Goal -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">target</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline font-bold text-on-surface">Calorie Budget</h4>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">540 kcal fits perfectly within your remaining 920 kcal budget for today. High omega-3 content supports your recovery goal.</p>
+</div>
+</div>
+<!-- Gate 3: Context -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline font-bold text-on-surface">Context Match</h4>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Located 0.4 miles away. Optimal for lunch (Current time: 12:45 PM). Restaurant wait time is under 10 minutes.</p>
+</div>
+</div>
+<!-- Gate 4: Preference -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline font-bold text-on-surface">Taste Profile</h4>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Matches your 'Zesty &amp; Fresh' preference tag. User ratings from similar profiles (Bio-Twins) are 4.8/5.</p>
+</div>
+</div>
+</div>
+<!-- Macro Breakdown Asymmetry -->
+<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Protein</p>
+<p class="text-2xl font-black text-primary">34g</p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Net Carbs</p>
+<p class="text-2xl font-black text-on-surface">12g</p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Fiber</p>
+<p class="text-2xl font-black text-on-surface">8g</p>
+</div>
+<div class="bg-surface-container p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Fat</p>
+<p class="text-2xl font-black text-on-surface">22g</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-12 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-primary text-on-primary py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all active:scale-95 duration-200 flex items-center justify-center gap-3">
+                            Order Now <span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="flex-1 bg-secondary-container text-on-secondary-container py-5 rounded-full font-bold text-lg hover:shadow-xl transition-all active:scale-95 duration-200 flex items-center justify-center gap-3">
+                            Add to Planner <span class="material-symbols-outlined">add_task</span>
+</button>
+</div>
+<!-- Bottom Insight Quote -->
+<div class="mt-8 flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+<p class="text-xs italic">"This meal will provide stable energy for your scheduled 4:00 PM Tennis match."</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation (Filtered for Top-Level Only) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl flex justify-around py-4 z-50 px-4">
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">home_health</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Planner</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-green-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-[10px] font-bold">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-500">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="../vitalis_core/theme.css" rel="stylesheet"/>
+<script src="../vitalis_core/state.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#616263",
+                    "secondary-fixed-dim": "#ffb470",
+                    "tertiary-fixed-dim": "#f1f1f1",
+                    "primary-fixed": "#9df197",
+                    "surface": "#f5f7f5",
+                    "tertiary-container": "#ffffff",
+                    "on-secondary-fixed-variant": "#7a4300",
+                    "outline": "#747776",
+                    "inverse-primary": "#9df197",
+                    "secondary": "#8a4c00",
+                    "inverse-on-surface": "#9b9d9c",
+                    "on-tertiary-fixed-variant": "#6c6d6e",
+                    "inverse-surface": "#0b0f0e",
+                    "primary-dim": "#025d16",
+                    "on-secondary-container": "#6d3b00",
+                    "on-error-container": "#520c00",
+                    "on-surface-variant": "#595c5b",
+                    "on-primary-container": "#005c15",
+                    "on-tertiary-fixed": "#4f5051",
+                    "error": "#b02500",
+                    "surface-bright": "#f5f7f5",
+                    "surface-container-high": "#e0e3e1",
+                    "tertiary-fixed": "#ffffff",
+                    "surface-container": "#e6e9e7",
+                    "on-primary-fixed-variant": "#12661e",
+                    "on-secondary-fixed": "#512a00",
+                    "secondary-fixed": "#ffc697",
+                    "error-dim": "#b92902",
+                    "primary": "#176a21",
+                    "primary-fixed-dim": "#90e28a",
+                    "on-primary-fixed": "#00460e",
+                    "on-secondary": "#fff0e6",
+                    "surface-dim": "#d1d5d3",
+                    "secondary-container": "#ffc697",
+                    "tertiary": "#5a5c5c",
+                    "on-error": "#ffefec",
+                    "on-tertiary": "#f3f3f3",
+                    "surface-variant": "#d9dedb",
+                    "secondary-dim": "#794200",
+                    "on-background": "#2c2f2e",
+                    "on-primary": "#d1ffc8",
+                    "error-container": "#f95630",
+                    "tertiary-dim": "#4e5050",
+                    "background": "#f5f7f5",
+                    "surface-tint": "#176a21",
+                    "primary-container": "#9df197",
+                    "outline-variant": "#abaeac",
+                    "surface-container-low": "#eff1ef",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#2c2f2e",
+                    "surface-container-highest": "#d9dedb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .vitality-ring {
+            background: conic-gradient(from 0deg, #176a21 var(--progress), #ffb470 var(--progress));
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tight text-green-900 dark:text-green-100">Healthfo</span>
+<div class="hidden md:flex gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../index.html">Dashboard</a>
+<a class="text-green-700 dark:text-green-400 font-bold border-b-2 border-green-700 transition-colors" href="#">Planner</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-green-600 transition-colors" href="../meal_discovery_logic_match/code.html">Discovery</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-green-800 dark:text-green-400 hover:scale-95 duration-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 text-green-800 dark:text-green-400 hover:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a health-conscious young woman with a friendly smile, soft natural lighting in a clean modern indoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzGGKJvT66QKtXfpFL7fBqHftgkrzm2jKkbV5V0n58Ben_DKmPTUgQBVxoI5DttGT-f-QoDEj4Iw5D2_V05o1kXPOk8oJXvDJ23IrKc3E4RL6jLr8CF_NENGs4dSS8v5CkqAueJgCzOHnUF2VaQvl2HW3gOmOrFguBX7ojUYZPH5eH9C506bdVp_itUdujCrX1GcqpZGdkm4tNgg3116wD7La7q_Wry9vsfinuNR_grLm1RGO172ddtEfDxOmuTwXMVVZssIXjLQM"/>
+</div>
+</div>
+</nav>
+<aside class="hidden lg:flex h-screen w-64 fixed left-0 flex-col py-6 bg-zinc-50 dark:bg-zinc-950 mt-16">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIaU5vYzjmYEeKg5Q3FVr_CD40_aF9gLDPb1q0G3kcrS-sw5XkwF153qa2ZZzxWg0SrUyvIrdFJV_muFHmrvpUtFNGPeegIYtlE0AONqEZIgOjtNhFH_i41MY45daL8NSF6RrBecJdIAANrNTO-nPXprpJY6iGl9T4-BlY-E3UK6WBnSskYb1yNM0plU79oBGY0LrrOwfnzTBZ7OFk4eCsAnmkvNzryIxLwDIw5MkJOvJM5BB1MbIsDlCh5fMJCtpgu8s785rK_hA"/>
+</div>
+<div>
+<p class="font-manrope text-sm font-bold text-green-800">Vitality Status</p>
+<p class="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">Steps: 8,432 | Stress: Low</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">home_health</span>
+<span class="font-manrope text-sm font-semibold">Home</span>
+</a>
+<a class="flex items-center gap-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full mx-2 px-4 py-3 translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-manrope text-sm font-semibold">Planner</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-manrope text-sm font-semibold">Library</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 mx-2 px-4 py-3 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-manrope text-sm font-semibold">Profile</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container font-bold rounded-full mb-6 hover:scale-95 transition-transform">
+                Sync Wearable
+            </button>
+<div class="border-t border-zinc-200 dark:border-zinc-800 pt-4 space-y-1">
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-4 py-2 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-sm font-semibold">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-4 py-2 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-manrope text-sm font-semibold">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="lg:ml-64 mt-20 p-8">
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<div>
+<h1 class="text-4xl font-extrabold text-on-background mb-2 tracking-tight">Weekly Macro Budget</h1>
+<p class="text-on-surface-variant font-medium">Week of October 23 — Balanced Intentionality</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-[0_12px_32px_-4px_rgba(23,106,33,0.2)] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Bulk Order Ingredients
+            </button>
+</header>
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="font-bold text-on-surface-variant uppercase text-xs tracking-widest">Protein</span>
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-primary">1,120g</span>
+<span class="text-on-surface-variant text-sm">/ 1,200g</span>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 93%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-secondary">
+<div class="flex justify-between items-start mb-4">
+<span class="font-bold text-on-surface-variant uppercase text-xs tracking-widest">Carbs</span>
+<span class="material-symbols-outlined text-secondary">bakery_dining</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-secondary">845g</span>
+<span class="text-on-surface-variant text-sm">/ 950g</span>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-on-secondary-fixed-variant">
+<div class="flex justify-between items-start mb-4">
+<span class="font-bold text-on-surface-variant uppercase text-xs tracking-widest">Fats</span>
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">opacity</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-on-secondary-fixed-variant">410g</span>
+<span class="text-on-surface-variant text-sm">/ 450g</span>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-secondary-fixed-variant h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-on-tertiary-container">
+<div class="flex justify-between items-start mb-4">
+<span class="font-bold text-on-surface-variant uppercase text-xs tracking-widest">Fiber</span>
+<span class="material-symbols-outlined text-on-tertiary-container">eco</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-on-tertiary-container">215g</span>
+<span class="text-on-surface-variant text-sm">/ 250g</span>
+</div>
+<div class="mt-4 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 86%"></div>
+</div>
+</div>
+</section>
+<div class="mb-8 flex items-center gap-4 bg-primary-container/30 p-4 rounded-xl border border-primary-container/50">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<p class="text-sm font-semibold text-on-primary-container">
+<span class="font-bold">Balance Logic:</span> High-intensity training scheduled for Wednesday. Planner has auto-adjusted Tuesday to "Low-Carb / High-Fiber" to optimize insulin sensitivity for peak performance.
+            </p>
+</div>
+<div class="overflow-x-auto pb-8">
+<div class="grid grid-cols-7 gap-4 min-w-[1200px]">
+<!-- Days Header -->
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">MON</h3><p class="text-xs font-bold text-zinc-400">Oct 23</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">TUE</h3><p class="text-xs font-bold text-zinc-400">Oct 24</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-primary">WED</h3><p class="text-xs font-bold text-primary-dim">Oct 25</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">THU</h3><p class="text-xs font-bold text-zinc-400">Oct 26</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">FRI</h3><p class="text-xs font-bold text-zinc-400">Oct 27</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">SAT</h3><p class="text-xs font-bold text-zinc-400">Oct 28</p></div>
+<div class="text-center pb-4"><h3 class="font-black text-on-surface-variant">SUN</h3><p class="text-xs font-bold text-zinc-400">Oct 29</p></div>
+<!-- Breakfast Row -->
+<div class="contents">
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm group hover:ring-2 ring-primary-container transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-primary uppercase">Breakfast</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-sm">swap_horiz</span></button>
+</div>
+<h4 class="font-bold text-sm mb-3">Greek Yogurt &amp; Honey</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 25g</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">C: 15g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm border-2 border-dashed border-primary-container/40">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-primary uppercase italic">Auto-filled</span>
+<button><span class="material-symbols-outlined text-sm text-primary">sync</span></button>
+</div>
+<h4 class="font-bold text-sm mb-3">Avocado &amp; Egg Toast</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 18g</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">F: 22g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-primary-container/20 p-5 rounded-lg shadow-sm ring-1 ring-primary/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-primary uppercase">Breakfast</span>
+<span class="material-symbols-outlined text-primary text-xs" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Oatmeal Power Bowl</h4>
+<div class="flex gap-2">
+<span class="bg-primary px-2 py-0.5 rounded text-[10px] font-bold text-on-primary">C: 65g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+</div>
+<!-- Lunch Row -->
+<div class="contents">
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-secondary uppercase">Lunch</span>
+<button><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<h4 class="font-bold text-sm mb-3">Grilled Salmon Salad</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 35g</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">F: 20g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-secondary uppercase">Lunch</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Chicken &amp; Quinoa</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 42g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-primary-container/20 p-5 rounded-lg shadow-sm ring-1 ring-primary/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-secondary uppercase">Lunch</span>
+<span class="material-symbols-outlined text-primary text-xs" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Beef &amp; Sweet Potato</h4>
+<div class="flex gap-2">
+<span class="bg-primary px-2 py-0.5 rounded text-[10px] font-bold text-on-primary">C: 80g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+</div>
+<!-- Dinner Row -->
+<div class="contents">
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase">Dinner</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Tofu Stir-fry</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 22g</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">Fiber: 12g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase">Dinner</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Lean Steak &amp; Asparagus</h4>
+<div class="flex gap-2">
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">P: 45g</span>
+<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] font-bold">C: 5g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-primary-container/20 p-5 rounded-lg shadow-sm ring-1 ring-primary/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase">Dinner</span>
+</div>
+<h4 class="font-bold text-sm mb-3">Pasta Primavera</h4>
+<div class="flex gap-2">
+<span class="bg-primary px-2 py-0.5 rounded text-[10px] font-bold text-on-primary">C: 90g</span>
+</div>
+</div>
+</div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+<div class="space-y-4"><div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm h-32 flex items-center justify-center border-2 border-dashed border-zinc-200"><span class="material-symbols-outlined text-zinc-300">add_circle</span></div></div>
+</div>
+</div>
+</div>
+<section class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<h3 class="text-xl font-bold mb-6">Bulk Shopping List Preview</h3>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4">
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Organic Chicken Breast</span>
+<span class="font-bold">2.4kg</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Sweet Potatoes</span>
+<span class="font-bold">3.5kg</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Greek Yogurt (Large)</span>
+<span class="font-bold">4 tubs</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Avocados (Ripening)</span>
+<span class="font-bold">7 count</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Quinoa (Bulk)</span>
+<span class="font-bold">1.5kg</span>
+</div>
+<div class="flex items-center justify-between border-b border-surface-container py-2">
+<span class="text-on-surface-variant font-medium">Fresh Spinach</span>
+<span class="font-bold">3 bags</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-lg text-on-primary flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4">local_shipping</span>
+<h3 class="text-2xl font-black mb-2">Ready to Prep?</h3>
+<p class="text-on-primary/80 mb-8">Send your entire weekly list to your favorite grocery delivery service with one click.</p>
+</div>
+<button class="bg-on-primary text-primary font-bold py-4 rounded-full hover:bg-white transition-colors">
+                    Fulfill with Whole Foods
+                </button>
+</div>
+</section>
+</main>
+<footer class="lg:hidden fixed bottom-0 w-full bg-white/80 backdrop-blur-xl flex justify-around py-4 z-50">
+<a class="text-zinc-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">home_health</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="text-primary flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Planner</span>
+</a>
+<a class="text-zinc-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold">Library</span>
+</a>
+<a class="text-zinc-400 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</footer>
+</body></html>

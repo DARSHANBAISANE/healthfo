@@ -1,0 +1,10 @@
+.git
+.gemini
+brain
+logs
+*.md
+deploy.sh
+Dockerfile
+nginx.conf
+node_modules
+npm-debug.log

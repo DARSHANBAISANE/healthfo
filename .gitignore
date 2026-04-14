@@ -1,0 +1,19 @@
+# System / Metadata
+.gemini/
+.antigravity/
+brain/
+logs/
+scratch/
+artifacts/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Deploy files that contain placeholders
+deploy.sh

@@ -1,0 +1,95 @@
+/* 
+  Vitality Editorial Design System 
+  Based on DESIGN.md - "The Living Lab" 
+*/
+
+:root {
+    /* Tonal Vitality Palette */
+    --primary: #176a21;
+    --primary-container: #9df197;
+    --on-primary: #d1ffc8;
+    --on-primary-container: #005c15;
+    
+    --secondary: #8a4c00;
+    --secondary-container: #ffc697;
+    --on-secondary: #fff0e6;
+    --on-secondary-container: #6d3b00;
+
+    --surface: #f5f7f5;
+    --surface-bright: #f5f7f5;
+    --surface-dim: #d1d5d3;
+    --surface-variant: #d9dedb;
+    
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #eff1ef;
+    --surface-container: #e6e9e7;
+    --surface-container-high: #e0e3e1;
+    --surface-container-highest: #d9dedb;
+
+    --on-surface: #2c2f2e;
+    --on-surface-variant: #595c5b;
+
+    --outline: #747776;
+    --outline-variant: #abaeac;
+
+    /* Semantic Vitality */
+    --error: #b02500;
+    --error-container: #f95630;
+
+    /* Typography Scales */
+    --font-headline: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    /* Border Radius - The approachable "md" */
+    --radius-sm: 0.5rem;   /* 8px */
+    --radius-md: 1.5rem;   /* 24px */
+    --radius-lg: 2rem;     /* 32px */
+    --radius-xl: 3rem;     /* 48px */
+    --radius-full: 9999px;
+
+    /* Shadow - The "Living Shadow" */
+    --shadow-ambient: 0 12px 32px -4px rgba(44, 47, 46, 0.06);
+    --shadow-hero: 0 24px 48px -12px rgba(44, 47, 46, 0.08);
+
+    /* Blur */
+    --blur-glass: 24px;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .headline {
+    font-family: var(--font-headline);
+    color: var(--on-surface);
+}
+
+/* Utilities */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+}
+
+.card {
+    background-color: var(--surface-container-lowest);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-ambient);
+    padding: 2rem;
+}
+
+/* The "No-Line" Rule enforcing utility */
+.section-boundary {
+    border: none !important;
+}
+
+/* Specialized Components */
+.vitality-ring {
+    background: conic-gradient(from 0deg, var(--primary) var(--progress, 0%), var(--secondary-container) var(--progress, 0%));
+    border-radius: 50%;
+}

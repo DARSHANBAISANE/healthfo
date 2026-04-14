@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Healthfo | Habit & Feedback Loop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="../vitalis_core/theme.css" rel="stylesheet"/>
+    <script src="../vitalis_core/state.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#176a21",
+                        "primary-container": "#9df197",
+                        secondary: "#8a4c00",
+                        "secondary-container": "#ffc697",
+                        surface: "#f5f7f5",
+                        "surface-container-low": "#eff1ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#2c2f2e",
+                        "on-surface-variant": "#595c5b",
+                    },
+                    borderRadius: {
+                        md: "1.5rem",
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        body: ["Plus Jakarta Sans"],
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(24px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+            <span class="text-primary font-bold tracking-widest uppercase text-xs">Habit Loop</span>
+            <h1 class="text-4xl md:text-5xl font-headline font-black mt-2 tracking-tight">Post-Meal Pulse</h1>
+            <p class="text-on-surface-variant text-lg mt-4 max-w-xl mx-auto">
+                Closing the loop on your last meal helps us fine-tune your future recommendations. 
+            </p>
+        </header>
+
+        <!-- Dynamic Feedback Section -->
+        <section class="space-y-12">
+            <!-- Meal Context -->
+            <div class="bg-surface-container-lowest p-8 rounded-md shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] flex flex-col md:flex-row items-center gap-8">
+                <div class="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-s4Jck3QYHB_0mOdW3OPEOaLNmsMwPhpEvD2WaDAd7jYr29pHbxjGnJbkGLY0k8btEzafe_5lyQAq8FmPvuaWdH6gZ9rl3Z6x95ZltJFI5pe_obmTEmUSvY-cJnaClFV0TLmXIc5Zq5K9LNp1sRA-xt4UEoBDkPpYCEe1ZOdlr4UCc-uFuG79eFwDy79Gv2eVVHND7-_woZIYhtcesCuJ01xW_chPKbcwtbJyjyT8ZWO-PGYywM0xCA_Hm3t27O8Wz5ZCZNjCrQ" alt="Recent Meal" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-headline font-bold">Summer Salmon Bowl</h3>
+                    <p class="text-on-surface-variant font-medium mt-1">Logged today at 1:15 PM</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">High Protein</span>
+                        <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase">Omega-3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sentiment Grid -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-headline font-bold px-2">How do you feel now?</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button class="flex flex-col items-center justify-center p-8 rounded-md bg-surface-container-low hover:bg-primary-container/20 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-3">bolt</span>
+                        <span class="font-bold">Energetic</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-8 rounded-md bg-surface-container-low hover:bg-secondary-container/20 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-secondary mb-3">cloud</span>
+                        <span class="font-bold">Focused</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-8 rounded-md bg-surface-container-low hover:bg-on-surface-variant/10 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant mb-3">bedtime</span>
+                        <span class="font-bold">Heavy</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-8 rounded-md border-2 border-primary bg-primary/5 transition-all group relative">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-3" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+                        <span class="font-bold">Optimal</span>
+                        <div class="absolute top-3 right-3 text-primary">
+                            <span class="material-symbols-outlined text-sm font-bold">check_circle</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pattern Detection -->
+            <div class="bg-secondary-container/20 p-8 rounded-md border border-secondary/10">
+                <div class="flex items-start gap-4">
+                    <div class="bg-secondary shadow-lg p-2 rounded-full text-white">
+                        <span class="material-symbols-outlined">insights</span>
+                    </div>
+                    <div>
+                        <h4 class="font-headline font-bold text-secondary text-lg">Potential Pattern Detected</h4>
+                        <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">
+                            Every time you eat <span class="font-bold text-on-surface">Wild Salmon</span>, your focus markers increase by 15% for the following 3 hours. We've promoted this ingredient in your future "Power Breakfasts."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Area -->
+            <div class="pt-8 flex flex-col items-center gap-4">
+                <button id="register-response-btn" class="w-full md:w-auto px-12 py-5 bg-primary text-on-primary rounded-full font-black text-lg shadow-[0_12px_32px_-4px_rgba(23,106,33,0.3)] hover:scale-105 active:scale-95 transition-all">
+                    Register Response
+                </button>
+                <script>
+                    document.getElementById('register-response-btn').addEventListener('click', () => {
+                        // In a real app, we'd save the sentiment here.
+                        window.location.href = '../index.html';
+                    });
+                </script>
+                <a href="../index.html" class="text-on-surface-variant font-bold text-sm tracking-wide">
+                    Maybe Later
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

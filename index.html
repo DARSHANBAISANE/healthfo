@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Healthfo | Central Orchestrator</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="vitalis_core/theme.css" rel="stylesheet"/>
+    <script src="vitalis_core/state.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#176a21",
+                        "primary-container": "#9df197",
+                        secondary: "#8a4c00",
+                        "secondary-container": "#ffc697",
+                        surface: "#f5f7f5",
+                        "surface-container-low": "#eff1ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#2c2f2e",
+                        "on-surface-variant": "#595c5b",
+                    },
+                    borderRadius: {
+                        md: "1.5rem",
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        body: ["Plus Jakarta Sans"],
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+    <!-- Main Dashboard Container -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Header: Orchestrator Status -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16">
+            <div>
+                <span class="text-primary font-bold tracking-widest uppercase text-xs">Central Intelligence</span>
+                <h1 class="text-5xl font-headline font-black mt-2 tracking-tight">System Dashboard</h1>
+            </div>
+            <div id="user-status-chip" class="bg-primary-container/20 text-primary px-6 py-3 rounded-full border border-primary/20 flex items-center gap-3">
+                <span class="material-symbols-outlined text-sm">face</span>
+                <span class="font-bold text-sm" id="user-name-display">Orchestrator Online</span>
+            </div>
+        </header>
+
+        <!-- Grid: System Modules -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            
+            <!-- Bento: Quick Stats / Context -->
+            <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <!-- Welcome Card -->
+                <div class="card md:col-span-2 flex flex-col justify-between items-start bg-primary text-on-primary">
+                    <div>
+                        <h2 class="text-3xl font-headline font-bold text-white mb-4">Welcome back to The Lab.</h2>
+                        <p class="text-primary-container/80 text-lg leading-relaxed mb-8">
+                            All sub-agents are synchronized. Your current Health DNA match is optimized for <strong>Weight Loss</strong>.
+                        </p>
+                    </div>
+                    <a href="home_contextual_pulse/code.html" class="px-8 py-4 bg-white text-primary rounded-full font-black hover:scale-105 active:scale-95 transition-all">
+                        View Discovery Feed
+                    </a>
+                </div>
+
+                <!-- Small Pulse Card -->
+                <div class="card flex flex-col justify-between">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-secondary">electric_bolt</span>
+                        <h3 class="font-bold uppercase tracking-widest text-xs text-on-surface-variant">Real-Time Pulse</h3>
+                    </div>
+                    <p class="text-3xl font-headline font-black">12°C <span class="text-sm font-medium text-on-surface-variant">/ Cold</span></p>
+                    <p class="text-xs text-on-surface-variant font-medium mt-2">Suggesting: "Warm & Healing" categories.</p>
+                </div>
+
+                <!-- Habit Loop Card -->
+                <div class="card flex flex-col justify-between">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary">update</span>
+                        <h3 class="font-bold uppercase tracking-widest text-xs text-on-surface-variant">Last Feedback</h3>
+                    </div>
+                    <p class="text-3xl font-headline font-black">Optimal</p>
+                    <a href="habit_feedback_loop/code.html" class="text-primary font-bold text-xs underline mt-2">Log New Response</a>
+                </div>
+            </div>
+
+            <!-- Side Rail: Module Navigation -->
+            <div class="md:col-span-4 space-y-6">
+                <h3 class="font-headline font-bold text-xl px-2">Sub-Agent Modules</h3>
+                <nav class="space-y-4">
+                    <a href="onboarding_taste_dna/code.html" class="group flex items-center justify-between p-6 bg-surface-container-low rounded-md hover:bg-surface-container-high transition-all">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary">dna</span>
+                            <span class="font-bold">Onboarding & DNA</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                    
+                    <a href="meal_discovery_logic_match/code.html" class="group flex items-center justify-between p-6 bg-surface-container-low rounded-md hover:bg-surface-container-high transition-all">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary">restaurant_menu</span>
+                            <span class="font-bold">Meal Discovery</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+
+                    <a href="advanced_meal_planner/code.html" class="group flex items-center justify-between p-6 bg-surface-container-low rounded-md hover:bg-surface-container-high transition-all">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-on-surface">calendar_month</span>
+                            <span class="font-bold">Weekly Planner</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </nav>
+
+                <!-- Onboarding Check -->
+                <div id="onboarding-notice" class="p-6 bg-secondary-container/20 rounded-md border border-secondary/20 hidden">
+                    <h4 class="font-bold text-secondary mb-2">Incomplete DNA</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed mb-4">Please complete the onboarding to unlock the full Intelligence Engine.</p>
+                    <a href="onboarding_taste_dna/code.html" class="text-sm font-black text-secondary underline">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Check state and adjust UI
+        document.addEventListener('DOMContentLoaded', () => {
+            const state = VitalisState.getState();
+            if (!VitalisState.isOnboarded()) {
+                document.getElementById('onboarding-notice').classList.remove('hidden');
+                document.getElementById('user-name-display').textContent = 'Guest Mode';
+            } else {
+                document.getElementById('user-name-display').textContent = 'Pro Profile Active';
+            }
+        });
+    </script>
+</body>
+</html>

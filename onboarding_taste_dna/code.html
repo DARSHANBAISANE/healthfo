@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthfo Onboarding | Taste DNA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../vitalis_core/theme.css" rel="stylesheet"/>
+<script src="../vitalis_core/state.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#616263",
+                        "secondary-fixed-dim": "#ffb470",
+                        "tertiary-fixed-dim": "#f1f1f1",
+                        "primary-fixed": "#9df197",
+                        "surface": "#f5f7f5",
+                        "tertiary-container": "#ffffff",
+                        "on-secondary-fixed-variant": "#7a4300",
+                        "outline": "#747776",
+                        "inverse-primary": "#9df197",
+                        "secondary": "#8a4c00",
+                        "inverse-on-surface": "#9b9d9c",
+                        "on-tertiary-fixed-variant": "#6c6d6e",
+                        "inverse-surface": "#0b0f0e",
+                        "primary-dim": "#025d16",
+                        "on-secondary-container": "#6d3b00",
+                        "on-error-container": "#520c00",
+                        "on-surface-variant": "#595c5b",
+                        "on-primary-container": "#005c15",
+                        "on-tertiary-fixed": "#4f5051",
+                        "error": "#b02500",
+                        "surface-bright": "#f5f7f5",
+                        "surface-container-high": "#e0e3e1",
+                        "tertiary-fixed": "#ffffff",
+                        "surface-container": "#e6e9e7",
+                        "on-primary-fixed-variant": "#12661e",
+                        "on-secondary-fixed": "#512a00",
+                        "secondary-fixed": "#ffc697",
+                        "error-dim": "#b92902",
+                        "primary": "#176a21",
+                        "primary-fixed-dim": "#90e28a",
+                        "on-primary-fixed": "#00460e",
+                        "on-secondary": "#fff0e6",
+                        "surface-dim": "#d1d5d3",
+                        "secondary-container": "#ffc697",
+                        "tertiary": "#5a5c5c",
+                        "on-error": "#ffefec",
+                        "on-tertiary": "#f3f3f3",
+                        "surface-variant": "#d9dedb",
+                        "secondary-dim": "#794200",
+                        "on-background": "#2c2f2e",
+                        "on-primary": "#d1ffc8",
+                        "error-container": "#f95630",
+                        "tertiary-dim": "#4e5050",
+                        "background": "#f5f7f5",
+                        "surface-tint": "#176a21",
+                        "primary-container": "#9df197",
+                        "outline-variant": "#abaeac",
+                        "surface-container-low": "#eff1ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#2c2f2e",
+                        "surface-container-highest": "#d9dedb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(24px); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- Suppression of Nav Shell as per Transactional/Onboarding Rule -->
+<main class="flex-grow flex flex-col md:flex-row min-h-screen">
+<!-- Left Side: Summary & Progress -->
+<section class="w-full md:w-1/3 bg-primary text-on-primary p-8 md:p-16 flex flex-col justify-between sticky top-0 h-auto md:h-screen z-10">
+<div class="space-y-12">
+<div class="flex items-center gap-3">
+<div class="bg-primary-container text-primary p-2 rounded-xl">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">biotech</span>
+</div>
+<span class="text-2xl font-black tracking-tight font-headline">Healthfo</span>
+</div>
+<div class="space-y-6">
+<div class="inline-flex items-center px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-sm font-semibold tracking-wide">
+                        Step 2 of 4
+                    </div>
+<h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Preference Intelligence</h1>
+<p class="text-lg text-primary-container/80 leading-relaxed font-medium">
+                        Your biological "Taste DNA" is the blueprint for our recommendation engine. We align your cravings with your metabolic needs.
+                    </p>
+</div>
+<!-- Progress Meter -->
+<div class="space-y-8">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-xl">check</span>
+</div>
+<div class="text-primary-container/60 font-semibold">Core Biometrics</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center font-bold shadow-lg">2</div>
+<div class="text-white font-bold text-lg">Taste &amp; Cuisine DNA</div>
+</div>
+<div class="flex items-center gap-4 opacity-50">
+<div class="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center text-white/30 font-bold">3</div>
+<div class="text-white/60 font-semibold">Allergies &amp; Vitality</div>
+</div>
+</div>
+</div>
+<div class="mt-12 md:mt-0 p-6 bg-primary-dim rounded-lg border border-white/5">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container/20">
+<img alt="Scientific visualization of flavor molecules" class="w-full h-full object-cover" data-alt="Microscopic view of colorful flavor molecules and crystalline structures in high resolution artistic rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLALI39L3RuO17M_wohYAyQHmRrdJBsTt94MdgHtVe6PHTAQzSTnQvhSJCDLdp58LtiGsTEeMCDWlfItNrHV-86euAocEBMDfG8Gefc8-otngVG_Vc6QVZp1nwBZs7idNW16pzMsjXyycdUUCqSCY--X_-1YNd5BsezkePs1d682qWmyBIwbG52i8TlVW7p9PnOnK06xIQe30UsREmG9mb69Jqa8eNpOzMP0BqquOFic81lV-x_PHlQuMud6QLFzubVhflspJNUmI"/>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-widest text-primary-container/60">Insight</div>
+<div class="text-sm font-medium italic">"Taste receptors influence 60% of long-term diet adherence."</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Interactive Forms -->
+<section class="w-full md:w-2/3 p-6 md:p-20 bg-surface min-h-screen overflow-y-auto">
+<div class="max-w-3xl mx-auto space-y-16">
+<!-- Section 1: Taste Profile -->
+<div class="space-y-8">
+<div class="flex items-baseline justify-between">
+<h2 class="text-3xl font-extrabold font-headline">Taste Profile</h2>
+<span class="text-on-surface-variant font-medium text-sm">Select all that apply</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Card: Spicy -->
+<button class="group relative flex flex-col items-center justify-center p-8 rounded-lg bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] border border-transparent hover:border-primary/20 transition-all duration-300">
+<div class="w-16 h-16 mb-4 rounded-full bg-error-container/10 flex items-center justify-center text-error group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-bold text-on-surface">Spicy</span>
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full border-2 border-outline-variant group-active:bg-primary group-active:border-primary"></div>
+</button>
+<!-- Card: Savory -->
+<button class="group relative flex flex-col items-center justify-center p-8 rounded-lg bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] border border-transparent hover:border-primary/20 transition-all duration-300">
+<div class="w-16 h-16 mb-4 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<span class="font-bold text-on-surface">Savory</span>
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full border-2 border-outline-variant group-active:bg-primary group-active:border-primary"></div>
+</button>
+<!-- Card: Sweet -->
+<button class="group relative flex flex-col items-center justify-center p-8 rounded-lg bg-primary-container/20 border-2 border-primary shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] transition-all duration-300">
+<div class="w-16 h-16 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary scale-110">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">icecream</span>
+</div>
+<span class="font-bold text-primary">Sweet</span>
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+</div>
+</button>
+<!-- Card: Sour -->
+<button class="group relative flex flex-col items-center justify-center p-8 rounded-lg bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(44,47,46,0.06)] border border-transparent hover:border-primary/20 transition-all duration-300">
+<div class="w-16 h-16 mb-4 rounded-full bg-on-surface-variant/10 flex items-center justify-center text-on-surface-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sunny</span>
+</div>
+<span class="font-bold text-on-surface">Sour</span>
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full border-2 border-outline-variant group-active:bg-primary group-active:border-primary"></div>
+</button>
+</div>
+</div>
+<!-- Section 2: Cuisine Map -->
+<div class="space-y-8">
+<h2 class="text-3xl font-extrabold font-headline">Cuisine Map</h2>
+<div class="space-y-4">
+<div class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Favorite Foundations</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-5 py-3 rounded-full bg-primary text-on-primary font-bold shadow-md cursor-pointer flex items-center gap-2">
+                                Mediterranean <span class="material-symbols-outlined text-sm">favorite</span>
+</span>
+<span class="px-5 py-3 rounded-full bg-primary text-on-primary font-bold shadow-md cursor-pointer flex items-center gap-2">
+                                Indian <span class="material-symbols-outlined text-sm">favorite</span>
+</span>
+<span class="px-5 py-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors font-semibold text-on-surface-variant cursor-pointer">
+                                Japanese
+                            </span>
+<span class="px-5 py-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors font-semibold text-on-surface-variant cursor-pointer">
+                                Mexican
+                            </span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Avoidance / Specialized</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-5 py-3 rounded-full bg-secondary-container text-on-secondary-container font-bold shadow-sm cursor-pointer flex items-center gap-2">
+                                Keto <span class="material-symbols-outlined text-sm">check_circle</span>
+</span>
+<span class="px-5 py-3 rounded-full border-2 border-error/30 text-error font-bold cursor-pointer flex items-center gap-2">
+                                Highly Processed <span class="material-symbols-outlined text-sm">block</span>
+</span>
+<span class="px-5 py-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors font-semibold text-on-surface-variant cursor-pointer">
+                                Paleo
+                            </span>
+<span class="px-5 py-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors font-semibold text-on-surface-variant cursor-pointer">
+                                Low Sodium
+                            </span>
+</div>
+</div>
+</div>
+<!-- Section 3: Health Profile (Asymmetric Layout) -->
+<div class="space-y-8 pb-20">
+<h2 class="text-3xl font-extrabold font-headline">Health Profile</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8 grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant ml-2">Age</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="28" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant ml-2">Weight (kg)</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="72" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant ml-2">Height (cm)</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg" placeholder="178" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant ml-2">Activity Level</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg p-5 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest font-bold text-lg appearance-none">
+<option>Moderate</option>
+<option>Sedentary</option>
+<option>Active</option>
+<option>Athlete</option>
+</select>
+</div>
+</div>
+<!-- Side Metric Visualization -->
+<div class="md:col-span-4 bg-surface-container-low rounded-lg p-6 flex flex-col items-center justify-center text-center space-y-4">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full rotate-[-90deg]">
+<circle class="text-secondary-fixed-dim" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-dasharray="351.8" stroke-dashoffset="100" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black text-on-surface">22.8</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Est. BMI</span>
+</div>
+</div>
+<p class="text-xs font-medium text-on-surface-variant leading-tight">Your metrics place you in the <span class="text-primary font-bold">Optimal Range</span> for your age group.</p>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="fixed bottom-0 right-0 w-full md:w-2/3 p-6 md:px-20 md:py-8 glass-panel border-t border-outline-variant/10 flex justify-between items-center z-20">
+<button class="flex items-center gap-2 text-on-surface-variant font-bold hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Back
+                    </button>
+<button id="save-onboarding-btn" class="px-10 py-4 bg-primary text-on-primary rounded-full font-extrabold text-lg shadow-[0_12px_32px_-4px_rgba(44,47,46,0.2)] hover:scale-105 active:scale-95 transition-all">
+                        Complete Onboarding
+                    </button>
+                    <script>
+                        document.getElementById('save-onboarding-btn').addEventListener('click', () => {
+                            // Collect from inputs (simplified for mock demo)
+                            const ageInput = document.querySelector('input[type="number"][placeholder="28"]');
+                            const weightInput = document.querySelector('input[type="number"][placeholder="72"]');
+                            
+                            if (ageInput && weightInput) {
+                                VitalisState.updateState({
+                                    profile: {
+                                        age: ageInput.value || 28,
+                                        weight: weightInput.value || 72,
+                                        height: 178,
+                                        activity: 'Active',
+                                        goal: 'Keto'
+                                    }
+                                });
+                                // Redirect to dashboard
+                                window.location.href = '../index.html';
+                            }
+                        });
+                    </script>
+</div>
+</div>
+</section>
+</main>
+</body></html>

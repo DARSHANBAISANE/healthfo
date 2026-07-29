@@ -1,43 +1,46 @@
-# healthfo
-# Healthfo | Home Contextual Pulse
+Healthfo 🩺⚡
+Healthfo is a multi-agent health dashboard system built to bridge real-time biometric tracking with intelligent, context-aware nutrition planning. It monitors wearable health metrics, detects physiological stress patterns, and uses a custom matchmaking algorithm to deliver personalized, biomarker-driven meal recommendations for recovery and performance.
 
-Welcome to the **Healthfo** dashboard codebase. This application tracks real-time health metrics, assesses user stress levels, and generates personalized, context-aware meal recommendations to optimize recovery and overall well-being.
+🌟 Key Features
+Real-Time Biometric Pulse Tracking:
 
----
+Step Counter: Tracks daily steps against goals with real-time percentage progress.
 
-## 🚀 Features
+Heart Rate Monitoring: Tracks resting and active BPM.
 
-### 1. Real-Time Pulse Tracking
-Monitors vital statistics from synced wearable devices:
-*   **Steps:** Real-time step counter with percentage tracking against daily goals.
-*   **Heart Rate:** Current resting or active BPM monitoring.
-*   **Sleep Score:** Rest quality analysis to gauge morning readiness.
+Sleep Score Analysis: Evaluates rest quality and morning readiness.
 
-### 2. Contextual Health Insights
-Analyzes biometric changes to provide immediate, actionable feedback:
-*   **Mood & Stress Assessment:** Detects elevated physiological stress markers (e.g., tracking spikes in cortisol levels).
-*   **Smart Prompts:** Suggests behavioral modifications such as deep breathing exercises and dietary adjustments (e.g., low-sodium guidance).
+Contextual Health & Mood Insights:
 
-### 3. Tailored Meal Recommendations
-A smart matchmaking algorithm that pairs current physiological needs with ideal nutritional profiles:
-*   **Post-Run & Stress Recovery:** Prioritizes magnesium-rich, high-protein, and low-sodium ingredients.
-*   **Immune & Gut Support:** Features targeted suggestions like zinc-boosting foods and prebiotics to optimize the gut-brain axis during high-stress periods.
+Stress & Cortisol Detection: Identifies elevated physiological stress markers (e.g., spikes in cortisol variance).
 
----
+Smart Adaptive Prompts: Recommends targeted intervention strategies (e.g., breathing protocols, low-sodium dietary adjustments).
 
-## 🛠️ App Architecture & Pages
+Biomarker-Driven Meal Matchmaking:
 
-*   **[Home (`/home_contextual_pulse`)](https://healthfo-615343076226.us-central1.run.app/home_contextual_pulse/code.html):** The primary hub displaying the Vitality Status, real-time metrics, and quick insights.
-*   **[Planner (`/advanced_meal_planner`)](https://healthfo-615343076226.us-central1.run.app/advanced_meal_planner/code.html):** Advanced meal schedule management.
-*   **[Discovery (`/meal_discovery_logic_match`)](https://healthfo-615343076226.us-central1.run.app/meal_discovery_logic_match/code.html):** Explore new healthy recipes matched directly to your biomarkers.
+Post-Run & Stress Recovery: Suggests magnesium-rich, high-protein, and low-sodium options based on activity level.
 
----
+Gut-Brain & Immune Support: Recommends prebiotic and zinc-dense meals during high-stress recovery windows.
 
-## 📊 Sample Payload Data
+🏗️ Architecture & Modules
+The repository is structured into specialized agents and functional modules:
 
-When syncing wearable data, the application processes contextual metrics structured as follows:
+Plaintext
+.
+├── vitalis_core/                  # Core health processing & biometric calculations
+├── home_contextual_pulse/         # Main dashboard view (/home_contextual_pulse)
+├── advanced_meal_planner/         # Advanced schedule & meal planner (/advanced_meal_planner)
+├── meal_discovery_logic_match/    # Matchmaking & recipe discovery engine (/meal_discovery_logic_match)
+├── habit_feedback_loop/           # Behavioral habits & feedback engine
+├── onboarding_taste_dna/          # User preference & dietary restrictions onboarding
+├── orchestrator_agent.md          # Multi-agent coordination specifications
+├── healthfo_workflow_v1.md        # System workflow documentation
+├── index.html                     # Entry point
+└── Dockerfile & nginx.conf        # Containerization setup
+📊 Payload Specification
+When syncing wearable metrics, the system processes payload structures formatted like this:
 
-```json
+JSON
 {
   "user": "Alex",
   "vitals": {
@@ -58,3 +61,21 @@ When syncing wearable data, the application processes contextual metrics structu
     }
   ]
 }
+🛠️ Local Setup & Deployment
+Run with Docker
+Build the Image:
+
+Bash
+docker build -t healthfo .
+Run the Container:
+
+Bash
+docker run -d -p 8080:80 healthfo
+Open http://localhost:8080 in your browser.
+
+🛠️ Tech Stack
+Frontend / UI: HTML5, CSS3, JavaScript
+
+Web Server: Nginx (Containerized)
+
+Architecture: Multi-Agent Health Orchestrator

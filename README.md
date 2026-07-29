@@ -1,4 +1,5 @@
 Healthfo 🩺⚡
+
 Healthfo is a multi-agent health dashboard system built to bridge real-time biometric tracking with intelligent, context-aware nutrition planning. It monitors wearable health metrics, detects physiological stress patterns, and uses a custom matchmaking algorithm to deliver personalized, biomarker-driven meal recommendations for recovery and performance.
 
 🌟 Key Features
@@ -23,6 +24,7 @@ Post-Run & Stress Recovery: Suggests magnesium-rich, high-protein, and low-sodiu
 Gut-Brain & Immune Support: Recommends prebiotic and zinc-dense meals during high-stress recovery windows.
 
 🏗️ Architecture & Modules
+
 The repository is structured into specialized agents and functional modules:
 
 Plaintext
@@ -37,7 +39,10 @@ Plaintext
 ├── healthfo_workflow_v1.md        # System workflow documentation
 ├── index.html                     # Entry point
 └── Dockerfile & nginx.conf        # Containerization setup
+
+
 📊 Payload Specification
+
 When syncing wearable metrics, the system processes payload structures formatted like this:
 
 JSON
@@ -61,7 +66,9 @@ JSON
     }
   ]
 }
+
 🛠️ Local Setup & Deployment
+
 Run with Docker
 Build the Image:
 
@@ -74,6 +81,7 @@ docker run -d -p 8080:80 healthfo
 Open http://localhost:8080 in your browser.
 
 🛠️ Tech Stack
+
 Frontend / UI: HTML5, CSS3, JavaScript
 
 Web Server: Nginx (Containerized)
